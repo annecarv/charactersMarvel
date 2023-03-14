@@ -1,23 +1,22 @@
 import requests
-import datetime
-import json
 import pandas as pd
-import hashConfig
+from hashConfig import hashConfig 
+import dotenv
+from dotenv import load_dotenv
+import os
 
-publicKey = 'af42d135bf129d0ef2e79e2a3abb2e92'
-privateKey = '80f0e0b9547c0afa99f41963d1c10c02b16c9093'
+dotenv.load_dotenv(dotenv.find_dotenv())
 
-baseEndpoint = 'https://gateway.marvel.com/v1/public/characters'
-
-timeStamp = datetime.datetime.now().strftime('%Y-%m-%d%H:%M:%S')
-
+timeStamp = os.getenv('timeStamp')
+privateKey = os.getenv('privateKey')
+publicKey = os.getenv('publicKey')
+baseEndpoint = os.getenv('baseEndpoint')
 params = {
     'ts': timeStamp,
     'apikey': publicKey,
     'hash': hashConfig(),
     'limit': 100
 }
-
 
 def getCharacters():
 

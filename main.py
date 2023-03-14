@@ -34,17 +34,17 @@ def getCharacters():
 
     dataCollection = []
 
-    for i in responseRequest['data']['results']:
-        id = i["id"]
-        name = i["name"]
-        description = i["description"]
-        comics = i["comics"]["available"]
-        series = i["series"]["available"]
-        stories = i["stories"]["available"]
-        events = i["events"]["available"]
+    for item in responseRequest['data']['results']:
+        id = item["id"]
+        name = item["name"]
+        description = item["description"]
+        comics = item["comics"]["available"]
+        series = item["series"]["available"]
+        stories = item["stories"]["available"]
+        events = item["events"]["available"]
 
         dataSet = {"id": id, "name": name, "description": description, "comics": comics, "series": series, "stories": stories, "events" : events }
-        
+
         dataCollection.append(dataSet)
 
         df = pd.DataFrame(dataCollection, dtype=None, columns = ['id','name','description','comics','series','stories','events'])

@@ -1,20 +1,24 @@
 import requests
 import pandas as pd
-from hashConfig import hashConfig 
+from hashConfig import hashConfig
 import dotenv
 from dotenv import load_dotenv
 import os
+import datetime
 
 dotenv.load_dotenv(dotenv.find_dotenv())
 
-timeStamp = os.getenv('timeStamp')
+timeStamp = datetime.datetime.now().strftime('%Y-%m-%d%H:%M:%S')
+
 privateKey = os.getenv('privateKey')
 publicKey = os.getenv('publicKey')
 baseEndpoint = os.getenv('baseEndpoint')
+
 params = {
     'ts': timeStamp,
     'apikey': publicKey,
     'hash': hashConfig(),
+    'offset': 0,
     'limit': 100
 }
 

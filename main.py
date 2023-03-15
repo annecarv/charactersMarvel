@@ -18,7 +18,7 @@ params = {
     'ts': timeStamp,
     'apikey': publicKey,
     'hash': hashConfig(),
-    'offset': 1,
+    'offset': 0,
     'limit': 100
 }
 

@@ -22,7 +22,7 @@ Ao realizar essa leitura, podemos ver que foi gerado na pasta raiz do projeto um
 
 Podemos testar nosso endpoint pelo Postman, segue URL utilizada para realizar a requisição:
 
-```https://gateway.marvel.com/v1/public/characters?apikey=af42d135bf129d0ef2e79e2a3abb2e92&ts={{today}}&hash={{hash}}```
+```https://gateway.marvel.com/v1/public/characters?apikey={}&ts={{today}}&hash={{hash}}```
 
 Lembrando que é necessário colocar os parâmetros ```apikey, ts e hash``` para conseguirmos acessar a requisição e o método HTTP será o GET.
 
